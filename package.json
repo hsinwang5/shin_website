@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "express": "^4.16.4",
+    "express-favicon": "^2.0.1",
+    "path": "^0.12.7",
     "classnames": "^2.2.6",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -26,10 +29,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "express": "^4.16.4",
-    "express-favicon": "^2.0.1",
     "gulp": "^4.0.0",
-    "gulp-sass": "^4.0.2",
-    "path": "^0.12.7"
+    "gulp-sass": "^4.0.2"
   }
 }
