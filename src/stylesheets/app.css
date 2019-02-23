@@ -44,7 +44,7 @@ h5 {
   height: 100vh; }
 
 .hero-screen {
-  height: 99vh;
+  height: 99.5vh;
   width: 100vw;
   background: #fffffe;
   position: absolute;
@@ -144,6 +144,14 @@ h5 {
   width: 180px;
   height: 180px;
   box-shadow: 0 2px 3px 1px #474747; }
+
+@media only screen and (min-width: 120rem) {
+  .hero-screen {
+    padding: 10vh 0; } }
+
+@media only screen and (min-width: 160rem) {
+  .hero-screen {
+    padding: 15vh 0; } }
 
 .animation__grow-triangle {
   animation: growTriangle 1s; }
