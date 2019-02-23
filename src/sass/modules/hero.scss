@@ -1,0 +1,110 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+}
+.hero-screen {
+  height: 99vh;
+  width: 100vw;
+  background: $heroDefaultColor;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 1s cubic-bezier(0.4, 0.02, 0.88, 0.04);
+  z-index: 1000;
+}
+.intro {
+  width: 100vw;
+  height: 100vh;
+  max-height: 700px;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  // top: -50%;
+  // margin-top: -300px;
+}
+.intro__triangle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-top: 55px solid #70ba07;
+  border-left: 55px solid transparent;
+  border-right: 55px solid transparent;
+  border-bottom: 55px solid transparent;
+  transform-origin: 50% 25%;
+  transition: transform 0.3s linear;
+}
+.intro__nameplate {
+  position: absolute;
+  top: 31%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 335px;
+  height: 155px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  font-family: "Sriracha", cursive;
+  font-size: 4.1rem;
+  transform: scale(0);
+  box-shadow: 0 2px 3px 2px #222220;
+  z-index: 100;
+  opacity: 1;
+  transition: 1s;
+}
+.intro__nameplate--first {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 155px;
+  background: $firstNameplateColor;
+}
+.intro__nameplate--last {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 155px;
+  background: $lastNameplateColor;
+}
+.intro__subtext {
+  position: relative;
+  top: 51%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 325px;
+  height: 100px;
+  display: flex;
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: 0% 50%;
+  z-index: 101;
+}
+.intro__subtext img {
+  width: 50%;
+  height: 100%;
+}
+.boldtext--intro {
+  position: absolute;
+  left: 35%;
+  width: 50%;
+  height: 100%;
+  line-height: 100px;
+  font-size: 4rem;
+}
+.avatar-img {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 180px;
+  height: 180px;
+  box-shadow: 0 2px 3px 1px #474747;
+}
+
+@import "animations/hero_animations.scss";

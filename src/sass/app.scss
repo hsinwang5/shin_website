@@ -1,0 +1,105 @@
+$tiny: 22rem; //screens smaller than 360 width
+$tablet: 48rem; //768x1024 portrait ipads
+$laptop: 80rem; //1280x720 standard HD
+$highdef: 120rem; //1920x1080 high def +
+
+//Hero page colors
+$heroDefaultColor: #fffffe;
+// $bodyDefaultColor: #4a4a48;
+$bodyDefaultColor: #111111;
+$firstNameplateColor: #70ba07;
+$lastNameplateColor: #069436;
+$introductionBoxColor: #d4d4d4;
+$shadowColor: #02f286;
+$circleColor: #f20276;
+
+// font-family: 'Questrial', sans-serif;
+// font-family: 'Aladin', cursive;
+// font-family: 'Sriracha', cursive;
+// font-family: 'Alegreya Sans SC', sans-serif;
+
+@mixin tiny-cutoff {
+  @media only screen and (max-width: $tiny) {
+    @content;
+  }
+}
+@mixin mobile-cutoff {
+  @media only screen and (min-width: $tablet) {
+    @content;
+  }
+}
+@mixin laptop-cutoff {
+  @media only screen and (min-width: $laptop) {
+    @content;
+  }
+}
+@mixin highdef-cutoff {
+  @media only screen and (min-width: $highdef) {
+    @content;
+  }
+}
+@mixin user-select {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: $bodyDefaultColor;
+  // overflow: hidden;
+  // width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-align: center;
+}
+
+//---------------------------------------------------------------------------
+
+.boldtext {
+  font-family: "Alegreya Sans SC", sans-serif;
+  text-align: center;
+}
+
+@import "modules/landing.scss";
+@import "modules/hero.scss";
+@import "modules/portfolio.scss";
+@import "modules/introduction.scss";
+
+.inactive {
+  display: none;
+}
+
+// .test-screen {
+//   position: absolute;
+//   width: 100vw;
+//   height: 100vh;
+//   overflow: hidden;
+//   border: 1px solid white;
+//   top: 1516px;
+// }

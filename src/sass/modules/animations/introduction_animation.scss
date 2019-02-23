@@ -1,0 +1,62 @@
+.animation__introduction-circle1 {
+  animation: spinLeft 20s infinite linear;
+  transform-origin: 50% 100%;
+}
+.animation__introduction-circle2 {
+  animation: spinRight 20s infinite linear;
+  transform-origin: 50% 100%;
+}
+.animation__faceRight {
+  transform: rotate(270deg);
+  transform-origin: 50% 100%;
+  transition: 0.5s linear;
+}
+.animation__faceLeft {
+  transform: rotate(-270deg);
+  transform-origin: 50% 100%;
+  transition: 0.5s linear;
+}
+// .animation__text {
+//   position: absolute;
+//   left: 0;
+//   animation: textTransition 1s ease-out;
+//   animation-fill-mode: forwards;
+//   // animation-delay: 7s;
+// }
+// .animation__text {
+//   position: absolute;
+//   display: block;
+//   left: 0;
+//   right: 0;
+//   margin: auto;
+//   top: -20vh;
+// }
+
+@keyframes spinLeft {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes spinRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes textTransition {
+  0% {
+    transform: scale(0);
+    top: 0;
+    color: white;
+  }
+  100% {
+    transform: scale(2);
+    top: -15000%;
+    color: red;
+  }
+}

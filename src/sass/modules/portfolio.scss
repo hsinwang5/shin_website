@@ -1,0 +1,148 @@
+.portfolio-container {
+  position: relative;
+}
+.portfolio-page {
+  width: 100vw;
+  // position: relative;
+  z-index: 100;
+  margin: auto;
+}
+.portfolio-line {
+  position: relative;
+  height: 99%;
+  width: 30%;
+  margin: auto;
+  top: 5px;
+  max-width: 333px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  // opacity: 0;
+}
+.portfolio-line__circle {
+  position: absolute;
+  top: 0;
+  //If border size is changed you must also change the corresponding
+  //borderSize value located in PortfolioLine.js
+  border: 5px solid #70ba07;
+  border: 7px solid $circleColor;
+  opacity: 0;
+}
+.portfolio-line__header {
+  top: 10%;
+  width: 140%;
+  height: 80%;
+  position: absolute;
+  color: white;
+  text-align: center;
+  padding: 60% 0;
+  transform: scale(0);
+  font-size: 1.1rem;
+}
+.portfolio-line__header--opacity {
+  transform: scale(1);
+  transition: transform 0.3s ease-out;
+  transition-delay: 0.5s;
+}
+.portfolio-item {
+  top: 10%;
+  width: 270%;
+  height: 80%;
+  position: relative;
+  border: 1px solid #2e7501;
+  transition: all 1s ease-out;
+  box-shadow: 0 0 2px 3px #02f286;
+  z-index: -1;
+  // vertical-align: middle;
+  // transform: scale(1.1);
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.throwawayp {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  left: 10%;
+  top: 50%;
+}
+//Text sections
+.portfolio-textbox {
+  pointer-events: none;
+  margin: auto;
+  text-align: center;
+  position: absolute;
+  color: #70ba07;
+  color: white;
+  z-index: 102;
+  font-size: 1.5rem;
+  overflow-x: hidden;
+  // border: 1px solid white;
+  // font-size: 2rem;
+}
+.portfolio-textbox__text {
+  text-align: center;
+  margin: auto;
+  width: 70vw;
+  overflow-x: hidden;
+  padding: 8% 2%;
+}
+.portfolio-screen {
+  position: absolute;
+  z-index: 100;
+  background: black;
+  opacity: 0.8;
+  width: 100vw;
+  height: 100vh;
+  left: -35vw;
+  overflow-x: hidden;
+}
+@include tiny-cutoff {
+  .portfolio-textbox {
+    font-size: 1.15rem;
+  }
+  .portfolio-line__header {
+    font-size: 0.72rem;
+  }
+}
+@include mobile-cutoff {
+  .portfolio-textbox__text {
+    font-size: 2.1rem;
+    padding: 12% 2%;
+  }
+  .portfolio-line__header {
+    font-size: 1.17rem;
+  }
+}
+@include laptop-cutoff {
+  .portfolio-textbox {
+    font-size: 2.5rem;
+    // padding: 10% 20%;
+  }
+  .portfolio-textbox__text {
+    padding: 9% 10%;
+  }
+  .portfolio-line__header {
+    font-size: 2rem;
+  }
+}
+@include highdef-cutoff {
+  .portfolio-textbox__text {
+    padding: 11% 8%;
+    font-size: 2.75rem;
+  }
+  .portfolio-line__header {
+    font-size: 2.5rem;
+  }
+}
+
+@import "animations/portfolio_animations.scss";
+
+// .portfolio-line__circle {
+//   top: 800px;
+// }

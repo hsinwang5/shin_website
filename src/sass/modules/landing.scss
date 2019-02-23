@@ -1,0 +1,12 @@
+.landing-waypoint {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 45%;
+}
+
+@include laptop-cutoff {
+  .landing-waypoint {
+    top: 10%;
+  }
+}
