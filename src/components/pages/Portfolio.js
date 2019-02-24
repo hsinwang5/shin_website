@@ -34,7 +34,7 @@ class Portfolio extends Component {
     //height is height of portfolio item times number of portoflio items
     const numberOfPortfolioLines = 8;
     let width = Math.round(window.innerWidth * 0.3 * 0.69);
-    width = width > 225 ? 225 : width;
+    width = width > 260 ? 260 : width;
     const height = Math.round(width * 2.115);
     const Style = {
       height: height * numberOfPortfolioLines

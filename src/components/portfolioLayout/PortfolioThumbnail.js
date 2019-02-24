@@ -9,11 +9,15 @@ function PortfolioThumbnail(props) {
     : window.innerHeight * 0.35;
   if (props.direction === "left" && !props.clicked) {
     Style = {
-      left: `60%`
+      left: `60%`,
+      height: `${props.defaultHeight}px`,
+      width: `${props.defaultWidth}px`
     };
   } else if (props.direction === "right" && !props.clicked) {
     Style = {
-      right: `230%`
+      right: `230%`,
+      height: `${props.defaultHeight}px`,
+      width: `${props.defaultWidth}px`
     };
   } else {
     Style = {
