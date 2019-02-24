@@ -33,7 +33,6 @@ class Hero extends Component {
   }
 
   enterWebsite() {
-    console.log("click success!");
     this.setState({
       scrollHeroPage: -110
     });

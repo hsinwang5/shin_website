@@ -30,7 +30,27 @@ function PortfolioThumbnail(props) {
       transform: props.isMobile ? `scale(1.5)` : `scale(1.4)`
     };
   }
-  return (
+  let Thumbnail = props.clicked ? (
+    <a href={props.link} target="_blank" rel="noopener noreferrer">
+      <div
+        className={classnames({
+          "portfolio-item": true,
+          "animation__portfolio-item-left":
+            props.scrolled &&
+            props.direction === "left" &&
+            props.thumbnailSwitch,
+          "animation__portfolio-item-right":
+            props.scrolled &&
+            props.direction === "right" &&
+            props.thumbnailSwitch
+        })}
+        style={Style}
+        onClick={props.handleClick}
+      >
+        <img src={`${props.picture}`} alt="portfolio project" />
+      </div>
+    </a>
+  ) : (
     <div
       className={classnames({
         "portfolio-item": true,
@@ -45,6 +65,7 @@ function PortfolioThumbnail(props) {
       <img src={`${props.picture}`} alt="portfolio project" />
     </div>
   );
+  return Thumbnail;
 }
 
 export default PortfolioThumbnail;

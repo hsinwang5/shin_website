@@ -7,6 +7,7 @@ import PortfolioHeader from "./PortfolioHeader";
 import IntroductionText from "../introductionLayout/IntroductionText";
 import PortfolioTextfield from "./PortfolioTextfield";
 import PortfolioScreen from "./PortfolioScreen";
+import PortfolioText from "./PortfolioText";
 
 class PortfolioLine extends Component {
   constructor(props) {
@@ -221,6 +222,7 @@ class PortfolioLine extends Component {
             defaultHeight={this.state.defaultHeight}
             defaultWidth={this.state.defaultWidth}
             isMobile={this.state.isMobile}
+            link={this.props.link}
           />
           <PortfolioHeader
             text={this.props.text}
