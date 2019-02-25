@@ -111,7 +111,7 @@ class IntroductionCircle extends Component {
 }
 
 IntroductionCircle.defaultProps = {
-  test: "booo"
+  neonColorsArr: ["#d8f520", "#00dff7", "#fcad00", "#fc00d2", "#fc5b5b"]
 };
 
 export default IntroductionCircle;
