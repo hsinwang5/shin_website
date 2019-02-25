@@ -14,7 +14,7 @@ function Nameplate(props) {
       })}
       onClick={props.enterWebsiteClick}
     >
-      <div className="intro__nameplate--first">Shin</div>
+      <div className="intro__nameplate--first">Shen</div>
       <div className="intro__nameplate--last">Wang</div>
     </div>
   );

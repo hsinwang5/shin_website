@@ -34,7 +34,7 @@ class Portfolio extends Component {
     //height is height of portfolio item times number of portoflio items
     const numberOfPortfolioLines = 8;
     let width = Math.round(window.innerWidth * 0.3 * 0.69);
-    width = width > 260 ? 260 : width;
+    width = width > 225 ? 225 : width;
     const height = Math.round(width * 2.115);
     const Style = {
       height: height * numberOfPortfolioLines
@@ -44,7 +44,6 @@ class Portfolio extends Component {
       <div className="portfolio-page" style={Style}>
         <div className="portfolio-line" ref={this.myRef}>
           <PortfolioLine
-            link="http://www.eathibachi.com"
             picture="images/hibachi.png"
             direction="left"
             place={0}
@@ -58,7 +57,6 @@ class Portfolio extends Component {
           />
           <PortfolioLine
             picture="images/color_picker_game.png"
-            link="https://codepen.io/hsinwang5/pen/WzwEeL"
             direction="right"
             place={1}
             text={"Color Picker Game"}
@@ -71,7 +69,6 @@ class Portfolio extends Component {
           />
           <PortfolioLine
             picture="images/jade_garden.png"
-            link="https://jade-garden.herokuapp.com/"
             direction="left"
             place={2}
             text={"Jade Garden"}
@@ -84,7 +81,6 @@ class Portfolio extends Component {
           />
           <PortfolioLine
             picture="images/simon.png"
-            link="https://codepen.io/hsinwang5/pen/NNOQYq"
             direction="right"
             place={3}
             text={"Simon Game"}
@@ -97,7 +93,6 @@ class Portfolio extends Component {
           />
           <PortfolioLine
             picture="images/developer_network.png"
-            link="https://devs-network.herokuapp.com/"
             direction="left"
             place={4}
             text={"Developer Network"}
@@ -110,7 +105,6 @@ class Portfolio extends Component {
           />
           <PortfolioLine
             picture="images/camp.png"
-            link="https://campsite-5543.herokuapp.com/"
             direction="right"
             place={5}
             text={"Camps (REST)"}
@@ -123,7 +117,6 @@ class Portfolio extends Component {
           />
           <PortfolioLine
             picture="images/scheduler.png"
-            link="https://github.com/hsinwang5/ff14_scheduler"
             direction="left"
             place={6}
             text={"MMO Raid Scheduler"}
@@ -136,7 +129,6 @@ class Portfolio extends Component {
           />
           <PortfolioLine
             picture="images/unity.png"
-            link="https://www.youtube.com/watch?v=7A7M5Po5E0s"
             direction="right"
             place={7}
             text={"Unity Adventure Game"}

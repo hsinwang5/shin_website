@@ -7,7 +7,6 @@ import PortfolioHeader from "./PortfolioHeader";
 import IntroductionText from "../introductionLayout/IntroductionText";
 import PortfolioTextfield from "./PortfolioTextfield";
 import PortfolioScreen from "./PortfolioScreen";
-import PortfolioText from "./PortfolioText";
 
 class PortfolioLine extends Component {
   constructor(props) {
@@ -28,9 +27,7 @@ class PortfolioLine extends Component {
       defaultHeight: 0, //calculates constant height of thumbnail
       defaultWidth: 0, //calculates constant width of thumbnail
       isMobile: false,
-      loadingDone: false, //needed due to responsive values being calucated after load
-      thumbnailWidth: 0,
-      thumbnailHeight: 0
+      loadingDone: false //needed due to responsive values being calucated after load
     };
 
     this.myRef = React.createRef();
@@ -40,7 +37,6 @@ class PortfolioLine extends Component {
     this.onClick = this.onClick.bind(this);
     this.closeClick = this.closeClick.bind(this);
     this.setResponsiveness = this.setResponsiveness.bind(this);
-    this.setThumbnailSize = this.setThumbnailSize.bind(this);
   }
 
   componentWillMount() {
@@ -56,7 +52,6 @@ class PortfolioLine extends Component {
       this.calculateSize();
     }, 2000);
     this.setResponsiveness();
-    this.setThumbnailSize();
   }
 
   //dynamically calculates the size of portfolio circles, call on render and window resize
@@ -65,18 +60,18 @@ class PortfolioLine extends Component {
     //borderSize is the size of the circle's border plus 1 pixel
     const borderSize = 7;
     let width = Math.round(window.innerWidth * 0.3 * 0.69);
-    width = width > 260 ? 260 : width;
+    width = width > 225 ? 225 : width;
     this.setState(
       {
         width,
-        defaultWidth: width * 2.7
+        defaultWidth: width
       },
       () => {
         const height = Math.round(this.myRef.current.offsetWidth * 2.115);
         this.setState(
           {
             height,
-            defaultHeight: height * 0.8
+            defaultHeight: height
           },
           () => {
             //calculate the top offset, factoring in the size of the circle's border
@@ -123,17 +118,6 @@ class PortfolioLine extends Component {
       });
     }, 500);
   }
-  setThumbnailSize() {
-    const thumbnailWidth = this.myRef.current.offsetWidth * 2.7;
-    const thumbnailHeight = this.myRef.current.offsetHeight * 0.8;
-    this.setState({
-      thumbnailWidth,
-      thumbnailHeight
-    });
-    console.log(
-      this.state.thumbnailHeight + " width: " + this.state.thumbnailWidth
-    );
-  }
   onLeave({ previousPosition, currentPosition }) {
     if (currentPosition === "below") {
       if (this.props.direction === "left") {
@@ -178,7 +162,7 @@ class PortfolioLine extends Component {
         borderBottomLeftRadius: "1000px",
         borderRight: "5px",
         height: `${this.state.height}px`,
-        left: this.state.width > 225 ? "-26%" : "-16%",
+        left: `-16%`,
         width: `${this.state.width}px`,
         transition: this.state.loadingDone ? `all 0.7s ease-out` : "0"
       };
@@ -189,7 +173,7 @@ class PortfolioLine extends Component {
         borderBottomRightRadius: "1000px",
         borderLeft: "5px",
         height: `${this.state.height}px`,
-        right: this.state.width > 225 ? "-26%" : "-16%",
+        right: `-16%`,
         width: `${this.state.width}px`,
         transition: this.state.loadingDone ? `all 0.7s ease-out` : "0"
       };
@@ -237,7 +221,6 @@ class PortfolioLine extends Component {
             defaultHeight={this.state.defaultHeight}
             defaultWidth={this.state.defaultWidth}
             isMobile={this.state.isMobile}
-            link={this.props.link}
           />
           <PortfolioHeader
             text={this.props.text}
