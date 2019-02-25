@@ -24,8 +24,8 @@ function PortfolioThumbnail(props) {
       // left: "0",
       // right: "80%",
       top: `-${top}px`,
-      height: `${props.defaultHeight * 0.8}px`,
-      width: `${props.defaultWidth * 2.7}px`,
+      height: `${props.defaultHeight}px`,
+      width: `${props.defaultWidth}px`,
       maxWidth: `450px`, //559
       maxHeight: `280px`, //350
       left: "0",
