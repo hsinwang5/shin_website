@@ -2,10 +2,10 @@ $tiny: 22rem; //screens smaller than 360 width
 $tablet: 48rem; //768x1024 portrait ipads
 $laptop: 80rem; //1280x720 standard HD
 $highdef: 120rem; //1920x1080 high def +
+$ultra: 160rem; //4k screens
 
 //Hero page colors
 $heroDefaultColor: #fffffe;
-// $bodyDefaultColor: #4a4a48;
 $bodyDefaultColor: #111111;
 $firstNameplateColor: #70ba07;
 $lastNameplateColor: #069436;
@@ -35,6 +35,11 @@ $circleColor: #f20276;
 }
 @mixin highdef-cutoff {
   @media only screen and (min-width: $highdef) {
+    @content;
+  }
+}
+@mixin ultra-cutoff {
+  @media only screen and (min-width: $ultra) {
     @content;
   }
 }

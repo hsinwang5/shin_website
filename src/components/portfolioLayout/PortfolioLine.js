@@ -4,7 +4,6 @@ import classNames from "classnames";
 
 import PortfolioThumbnail from "./PortfolioThumbnail";
 import PortfolioHeader from "./PortfolioHeader";
-import IntroductionText from "../introductionLayout/IntroductionText";
 import PortfolioTextfield from "./PortfolioTextfield";
 import PortfolioScreen from "./PortfolioScreen";
 
@@ -50,7 +49,7 @@ class PortfolioLine extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.calculateSize();
-    }, 2000);
+    }, 2500);
     this.setResponsiveness();
   }
 
@@ -61,17 +60,19 @@ class PortfolioLine extends Component {
     const borderSize = 7;
     let width = Math.round(window.innerWidth * 0.3 * 0.69);
     width = width > 225 ? 225 : width;
+    const defaultWidth = width * 2.7;
     this.setState(
       {
         width,
-        defaultWidth: width
+        defaultWidth
       },
       () => {
         const height = Math.round(this.myRef.current.offsetWidth * 2.115);
+        const defaultHeight = height * 0.8;
         this.setState(
           {
             height,
-            defaultHeight: height
+            defaultHeight
           },
           () => {
             //calculate the top offset, factoring in the size of the circle's border
@@ -164,7 +165,7 @@ class PortfolioLine extends Component {
         height: `${this.state.height}px`,
         left: `-16%`,
         width: `${this.state.width}px`,
-        transition: this.state.loadingDone ? `all 0.7s ease-out` : "0"
+        transition: this.state.loadingDone ? `all 0.55s ease-out` : "0"
       };
     } else if (this.props.direction === "right" && !this.state.clicked) {
       Style = {
@@ -175,12 +176,12 @@ class PortfolioLine extends Component {
         height: `${this.state.height}px`,
         right: `-16%`,
         width: `${this.state.width}px`,
-        transition: this.state.loadingDone ? `all 0.7s ease-out` : "0"
+        transition: this.state.loadingDone ? `all 0.55s ease-out` : "0"
       };
     } else if (this.state.clicked) {
       Style = {
         top: `${this.props.viewportTop + window.innerHeight * 0.45}px`,
-        transition: "all .6s ease-out",
+        transition: "all .45s ease-out",
         height: `${window.innerHeight * 0.52}px`,
         width: this.state.isMobile ? `80vw` : `70vw`,
         left: `-25vw`,
@@ -221,6 +222,7 @@ class PortfolioLine extends Component {
             defaultHeight={this.state.defaultHeight}
             defaultWidth={this.state.defaultWidth}
             isMobile={this.state.isMobile}
+            link={this.props.link}
           />
           <PortfolioHeader
             text={this.props.text}

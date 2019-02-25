@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Waypoint from "react-waypoint";
 import classnames from "classnames";
 
 class IntroductionCircle extends Component {
@@ -11,79 +10,82 @@ class IntroductionCircle extends Component {
     super(props);
 
     this.state = {
-      left: "-10vw",
-      right: "-10vw",
       top: this.props.top,
       topOffset: "22%",
-      animationDistance: 3000,
-      rotation: "",
+      // animationDistance: 3000,
       sideOffset: 0
     };
 
-    this.onEnter = this.onEnter.bind(this);
-    this.onLeave = this.onLeave.bind(this);
+    // this.onEnter = this.onEnter.bind(this);
+    // this.onLeave = this.onLeave.bind(this);
   }
 
   componentWillMount() {
     let topOffset = window.innerWidth <= 850 ? "15%" : "14%";
-    let animationDistance = window.innerHeight <= 1100 ? 600 : 900;
-    let sideOffset = window.innerWidth <= 850 ? "0" : "11vw";
+    // let animationDistance = window.innerHeight <= 1100 ? 600 : 900;
+    let sideOffset = window.innerWidth <= 850 ? "12vw" : "12vw";
     this.setState({
       topOffset,
-      animationDistance,
+      // animationDistance,
       sideOffset
     });
   }
   //returns the circles to introduction section
-  onEnter() {
-    if (this.props.aniRight) {
-      let left = this.state.sideOffset;
-      let top = this.props.top;
-      this.setState({
-        left,
-        top
-      });
-    }
-    if (this.props.aniLeft) {
-      let right = this.state.sideOffset;
-      let top = this.props.top;
-      this.setState({
-        right,
-        top
-      });
-    }
-  }
-  //animates circles down towards portfolio section
-  onLeave({ currentPosition }) {
-    if (currentPosition === "below") {
-      console.log("stopped");
-      return;
-    }
-    if (this.props.aniRight) {
-      let left = "-50vw";
-      let top = this.state.animationDistance;
-      this.setState({
-        left,
-        top
-      });
-    }
-    if (this.props.aniLeft) {
-      let right = "-50vw";
-      let top = this.state.animationDistance;
-      this.setState({
-        right,
-        top
-      });
-    }
-  }
+  // onEnter() {
+  //   if (this.props.aniRight) {
+  //     let left = this.state.sideOffset;
+  //     let top = this.props.top;
+  //     this.setState({
+  //       left,
+  //       top
+  //     });
+  //   }
+  //   if (this.props.aniLeft) {
+  //     let right = this.state.sideOffset;
+  //     let top = this.props.top;
+  //     this.setState({
+  //       right,
+  //       top
+  //     });
+  //   }
+  // }
+  // //animates circles down towards portfolio section
+  // onLeave({ currentPosition }) {
+  //   if (currentPosition === "below") {
+  //     console.log("stopped");
+  //     return;
+  //   }
+  //   if (this.props.aniRight) {
+  //     let left = "-50vw";
+  //     let top = this.state.animationDistance;
+  //     this.setState({
+  //       left,
+  //       top
+  //     });
+  //   }
+  //   if (this.props.aniLeft) {
+  //     let right = "-50vw";
+  //     let top = this.state.animationDistance;
+  //     this.setState({
+  //       right,
+  //       top
+  //     });
+  //   }
+  // }
 
   render() {
+    // let horizontalAxis;
+
+    const horizontalAxis = this.props.introScrolled
+      ? "-100vw"
+      : this.state.sideOffset;
+
     const Style = {
       top: `${this.state.top}%`,
-      left: `${this.props.aniRight ? this.state.left : "none"}`,
-      right: `${this.props.aniLeft ? this.state.right : "none"}`
+      left: `${this.props.aniRight ? horizontalAxis : "none"}`,
+      right: `${this.props.aniLeft ? horizontalAxis : "none"}`
     };
-    const StyleConstant = {
+    const StyleAnchor = {
       top: `${this.props.top}%`,
       left: `${this.props.aniRight ? "-8vw" : "none"}`,
       right: `${this.props.aniLeft ? "-8vw" : "none"}`
@@ -94,7 +96,7 @@ class IntroductionCircle extends Component {
       right: 0
     };
     return (
-      <div className="introduction__anchor" style={StyleConstant}>
+      <div className="introduction__anchor" style={StyleAnchor}>
         <div
           className={classnames("introduction__circle", {
             "animation__introduction-circle1": this.props.aniLeft,
@@ -102,18 +104,14 @@ class IntroductionCircle extends Component {
           })}
           style={Style}
         />
-        {/* prevents movement of the waypoint when animating div
-          and allows more precise positioning */}
-        <Waypoint
-          onEnter={this.onEnter}
-          onLeave={this.onLeave}
-          topOffset={this.state.topOffset}
-        >
-          <div className="introduction__waypoint" style={StyleWaypoint} />
-        </Waypoint>
+        <div className="introduction__waypoint" style={StyleWaypoint} />
       </div>
     );
   }
 }
+
+IntroductionCircle.defaultProps = {
+  test: "booo"
+};
 
 export default IntroductionCircle;

@@ -101,13 +101,37 @@ class Introduction extends Component {
             margin={5}
             introScrolled={this.props.introScrolled}
           />
+          <IntroductionCircle
+            top={11}
+            aniRight={true}
+            introScrolled={this.props.introScrolled}
+          />
+          <IntroductionCircle
+            top={11}
+            aniLeft={true}
+            introScrolled={this.props.introScrolled}
+          />
+          <IntroductionCircle
+            top={34}
+            aniRight={true}
+            introScrolled={this.props.introScrolled}
+          />
+          <IntroductionCircle
+            top={34}
+            aniLeft={true}
+            introScrolled={this.props.introScrolled}
+          />
+          <IntroductionCircle
+            top={58}
+            aniRight={true}
+            introScrolled={this.props.introScrolled}
+          />
+          <IntroductionCircle
+            top={58}
+            aniLeft={true}
+            introScrolled={this.props.introScrolled}
+          />
         </div>
-        <IntroductionCircle top={11} aniRight={true} />
-        <IntroductionCircle top={11} aniLeft={true} />
-        <IntroductionCircle top={34} aniRight={true} />
-        <IntroductionCircle top={34} aniLeft={true} />
-        <IntroductionCircle top={58} aniRight={true} />
-        <IntroductionCircle top={58} aniLeft={true} />
       </div>
     );
   }
