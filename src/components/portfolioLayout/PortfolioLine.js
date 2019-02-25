@@ -112,12 +112,16 @@ class PortfolioLine extends Component {
         });
       }
     }
-    //removes animation class from thumbnails to allow further animations
-    setTimeout(() => {
-      this.setState({
-        thumbnailSwitch: false
-      });
-    }, 500);
+    //ThumbnailSwitch removes animation class from thumbnails to allow further animations
+    //this value must match thumnailSlide animation timing in portfolio_animations.scss
+    setTimeout(
+      () => {
+        this.setState({
+          thumbnailSwitch: false
+        });
+      },
+      this.state.isMobile ? 500 : 800
+    );
   }
   onLeave({ previousPosition, currentPosition }) {
     if (currentPosition === "below") {

@@ -31,6 +31,25 @@
   animation-fill-mode: forwards;
 }
 
+@include laptop-cutoff {
+  .animation__portfolioLineSlideInLeft {
+    animation: portfolioLineSlideInLeft 0.8s ease-out;
+    animation-fill-mode: forwards;
+  }
+  .animation__portfolioLineSlideInRight {
+    animation: portfolioLineSlideInRight 0.8s ease-out;
+    animation-fill-mode: forwards;
+  }
+  .animation__portfolio-item-left {
+    animation: thumbnailSlideLeft 0.8s ease-out;
+    animation-fill-mode: forwards;
+  }
+  .animation__portfolio-item-right {
+    animation: thumbnailSlideRight 0.8s ease-out;
+    animation-fill-mode: forwards;
+  }
+}
+
 @keyframes portfolioLineSlideInLeft {
   0% {
     opacity: 0;

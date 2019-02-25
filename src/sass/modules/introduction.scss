@@ -99,7 +99,9 @@
   max-height: 100px;
   max-width: 200px;
   border-bottom: 0;
-  transition: all 0.5s ease-in-out;
+  transition: left 0.7s ease-in-out, right 0.7s ease-in-out,
+    border-color 2.5s linear, box-shadow 2.5s linear;
+  box-shadow: 0 -7.5px 10px 1px #02f286;
 }
 .introduction__anchor {
   position: absolute;
@@ -131,7 +133,8 @@
   .introduction__circle {
     width: 30vw;
     height: 15vw;
-    transition: all 0.8s ease-in-out;
+    transition: left 1s ease-in-out, right 1s ease-in-out,
+      border-color 2.5s linear, box-shadow 2.5s linear;
   }
 }
 @include highdef-cutoff {

@@ -51,8 +51,7 @@
   position: relative;
   border: 1px solid #2e7501;
   transition: all 0.6s cubic-bezier(0.58, 0.01, 0.72, 0.99);
-  // box-shadow: 0 0 2px 3px #02f286;
-  box-shadow: 0 0 2px 3px red;
+  box-shadow: 0 0 2px 3px #02f286;
   z-index: -1;
   // vertical-align: middle;
   // transform: scale(1.1);
@@ -132,6 +131,9 @@
   }
   .portfolio-line__header {
     font-size: 2rem;
+  }
+  .throwawayp {
+    top: 20%;
   }
 }
 @include highdef-cutoff {

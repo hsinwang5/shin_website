@@ -13,7 +13,9 @@ class IntroductionCircle extends Component {
       top: this.props.top,
       topOffset: "22%",
       // animationDistance: 3000,
-      sideOffset: 0
+      sideOffset: 0,
+      randomColor: null,
+      randomColor2: null
     };
 
     // this.onEnter = this.onEnter.bind(this);
@@ -23,12 +25,28 @@ class IntroductionCircle extends Component {
   componentWillMount() {
     let topOffset = window.innerWidth <= 850 ? "15%" : "14%";
     // let animationDistance = window.innerHeight <= 1100 ? 600 : 900;
-    let sideOffset = window.innerWidth <= 850 ? "12vw" : "12vw";
+    let sideOffset = window.innerWidth <= 850 ? "9vw" : "12vw";
     this.setState({
       topOffset,
       // animationDistance,
       sideOffset
     });
+  }
+  componentDidMount() {
+    setInterval(() => {
+      const random = Math.round(
+        Math.random() * (this.props.neonColorsArr.length - 1)
+      );
+      const random2 = Math.round(
+        Math.random() * (this.props.neonColorsArr.length - 1)
+      );
+      const randomColor = this.props.neonColorsArr[random];
+      const randomColor2 = this.props.neonColorsArr[random2];
+      this.setState({
+        randomColor,
+        randomColor2
+      });
+    }, 3000);
   }
   //returns the circles to introduction section
   // onEnter() {
@@ -83,7 +101,9 @@ class IntroductionCircle extends Component {
     const Style = {
       top: `${this.state.top}%`,
       left: `${this.props.aniRight ? horizontalAxis : "none"}`,
-      right: `${this.props.aniLeft ? horizontalAxis : "none"}`
+      right: `${this.props.aniLeft ? horizontalAxis : "none"}`,
+      borderColor: `${this.state.randomColor}`,
+      boxShadow: `0 -8px 6px 1px ${this.state.randomColor2}`
     };
     const StyleAnchor = {
       top: `${this.props.top}%`,
@@ -111,7 +131,18 @@ class IntroductionCircle extends Component {
 }
 
 IntroductionCircle.defaultProps = {
-  neonColorsArr: ["#d8f520", "#00dff7", "#fcad00", "#fc00d2", "#fc5b5b"]
+  neonColorsArr: [
+    "#d8f520",
+    "#00dff7",
+    "#fcad00",
+    "#fc00d2",
+    "#fc5b5b",
+    "#e6cccc",
+    "#72fa02",
+    "#ab79fc",
+    "#eb98f5",
+    "#fcf4de"
+  ]
 };
 
 export default IntroductionCircle;
