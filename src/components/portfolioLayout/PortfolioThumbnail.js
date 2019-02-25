@@ -3,10 +3,9 @@ import classnames from "classnames";
 
 function PortfolioThumbnail(props) {
   let Style;
-  //controls thumnail Y position. Higher values = higher position
   const top = props.isMobile
     ? window.innerHeight * 0.35
-    : window.innerHeight * 0.35;
+    : window.innerHeight * 0.4;
   if (props.direction === "left" && !props.clicked) {
     Style = {
       left: `60%`,
@@ -31,7 +30,7 @@ function PortfolioThumbnail(props) {
       left: "0",
       right: "0",
       margin: "auto",
-      transform: props.isMobile ? `scale(1.5)` : `scale(1.4)`
+      transform: props.isMobile ? `scale(1.35)` : `scale(1.28)`
     };
   }
   let Thumbnail = props.clicked ? (
