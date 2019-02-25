@@ -3,7 +3,7 @@
   height: 100vh;
 }
 .hero-screen {
-  height: 99vh;
+  height: 99.5vh;
   width: 100vw;
   background: $heroDefaultColor;
   position: absolute;
@@ -20,8 +20,6 @@
   left: 0;
   right: 0;
   margin: auto;
-  // top: -50%;
-  // margin-top: -300px;
 }
 .intro__triangle {
   position: absolute;
@@ -105,6 +103,17 @@
   width: 180px;
   height: 180px;
   box-shadow: 0 2px 3px 1px #474747;
+}
+
+@include highdef-cutoff {
+  .hero-screen {
+    padding: 10vh 0;
+  }
+}
+@include ultra-cutoff {
+  .hero-screen {
+    padding: 15vh 0;
+  }
 }
 
 @import "animations/hero_animations.scss";
