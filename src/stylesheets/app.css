@@ -243,7 +243,7 @@ h5 {
   position: absolute;
   top: 0;
   border: 5px solid #70ba07;
-  border: 7px solid #f20276;
+  border: 7px solid #118ff0;
   opacity: 0; }
 
 .portfolio-line__header {
@@ -449,7 +449,7 @@ h5 {
   height: 700px;
   border: 1px solid #515600;
   margin: auto;
-  box-shadow: 0 0 7px 3px #02f286;
+  box-shadow: 0 0 7px 3px #ff9302;
   padding: 15px 10px;
   z-index: 100;
   top: 4%;
@@ -514,12 +514,12 @@ h5 {
   opacity: 1;
   transform: translate(0, -425%) scale(1.7);
   transition: all 0.7s ease-in;
-  color: #f20276;
+  color: #118ff0;
   top: 0; }
 
 .introduction__circle {
   z-index: 99;
-  border: 10px solid #f20276;
+  border: 10px solid #118ff0;
   border-top-left-radius: 2000px;
   border-top-right-radius: 2000px;
   position: absolute;

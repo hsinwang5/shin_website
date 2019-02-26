@@ -18,9 +18,18 @@ class Introduction extends Component {
   }
 
   render() {
+    let Style;
+    if (this.props.introScrolled) {
+      Style = {
+        boxShadow: `0 0 7px 3px #02f286`
+      };
+    } else {
+      Style = {};
+    }
     return (
       <div className="introduction-main-container">
         <div
+          style={Style}
           className={classnames({
             introduction: true,
             "introduction--transition": this.props.introScrolled

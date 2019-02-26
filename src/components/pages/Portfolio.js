@@ -144,7 +144,7 @@ class Portfolio extends Component {
             handleClick={this.onClick}
             viewportTop={this.state.viewportTop}
             description={
-              "A 3-d adventure game made with free graphical assets. Basic prototype set up in a week, and was made primarily to get comfortable with Unity's api and general processes."
+              "A 3-d adventure game made with free graphical assets back when I was still learning about Object-oriented programming. Features custom camera, dialogue system, and basic seek-find AI."
             }
           />
         </div>

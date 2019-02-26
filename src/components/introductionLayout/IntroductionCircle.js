@@ -141,7 +141,7 @@ IntroductionCircle.defaultProps = {
     "#72fa02",
     "#ab79fc",
     "#eb98f5",
-    "#fcf4de"
+    "#f6fc30"
   ]
 };
 
